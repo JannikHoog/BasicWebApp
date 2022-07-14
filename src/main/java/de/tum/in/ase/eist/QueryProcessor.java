@@ -5,6 +5,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class QueryProcessor {
 
+    /*
+    I changed something
+     */
+
     public String process(String query) {
 		query = query.toLowerCase();
         if (query.contains("shakespeare")) {
