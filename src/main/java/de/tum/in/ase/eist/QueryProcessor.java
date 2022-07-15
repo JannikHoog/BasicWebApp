@@ -32,8 +32,27 @@ public class QueryProcessor {
                 }
             }
             return "";
+        } else if(query.contains("largest")){
+            String[] arrayquery = query.split(" ");
+            for(int i = 0; i < arrayquery.length; i++){
+                if(arrayquery[i].equals(":")){
+                    int[] numbers = new int[arrayquery.length-i];
+                    for(int w = 0; w < numbers.length; w++){
+                        numbers[w] = Integer.parseInt(arrayquery[i+w]);
+                    }
+                    int high = numbers[0];
+                    for(int z = 0; z < numbers.length; z++){
+                        if(numbers[z] > high){
+                            high = numbers[z];
+                        }
+                    }
+                    return "" + high;
+                }
+                return "";
+            }
         } else {
             return "";
         }
+        return "";
     }
 }
