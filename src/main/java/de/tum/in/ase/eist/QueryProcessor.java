@@ -25,9 +25,10 @@ public class QueryProcessor {
             return "jannik";
         } else if (query.contains("plus")) {
             String[] arrayquery = query.split(" ");
-            for (int i = 0; i < arrayquery.length; i++) {
+            for (int i = 1; i < arrayquery.length - 1; i++) {
                 if (arrayquery[i].equals("plus")) {
-                    return "" + Integer.parseInt(arrayquery[i - 1]) + Integer.parseInt(arrayquery[i + 1]);
+                    int result = Integer.parseInt(arrayquery[i - 1]) + Integer.parseInt(arrayquery[i + 1]);
+                    return "" + result;
                 }
             }
             return "";
