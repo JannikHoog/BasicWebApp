@@ -35,7 +35,7 @@ public class QueryProcessor {
         } else if(query.contains("largest")){
             String[] arrayquery = query.split(" ");
             for(int i = 0; i < arrayquery.length; i++){
-                if(arrayquery[i].equals(":")){
+                if(arrayquery[i].contains(":")){
                     int[] numbers = new int[arrayquery.length-i];
                     for(int w = 0; w < numbers.length; w++){
                         String res = "";
@@ -54,7 +54,6 @@ public class QueryProcessor {
                     }
                     return "" + high;
                 }
-                return "";
             }
         } else {
             return "";
