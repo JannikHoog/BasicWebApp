@@ -38,7 +38,13 @@ public class QueryProcessor {
                 if(arrayquery[i].equals(":")){
                     int[] numbers = new int[arrayquery.length-i];
                     for(int w = 0; w < numbers.length; w++){
-                        numbers[w] = Integer.parseInt(arrayquery[i+w]);
+                        String res = "";
+                        if(arrayquery[i+w].endsWith(",")){
+                            res = arrayquery[i+w].replace(",", "");
+                        } else {
+                            res = arrayquery[i+w];
+                        }
+                        numbers[w] = Integer.parseInt(res);
                     }
                     int high = numbers[0];
                     for(int z = 0; z < numbers.length; z++){
